@@ -2,6 +2,7 @@
 @font-face{font-family:"Noto Serif KR";src:url('assets/fonts/NotoSerifKR-Medium.woff') format('woff');font-style:normal;font-weight:500;font-display:swap}
 @font-face{font-family:"Chosun Gulim";src:url('assets/fonts/ChosunGu.TTF') format('truetype');font-style:normal;font-weight:400;font-display:swap}
 @font-face{font-family:"Resist Sans Display";src:url('assets/fonts/ResistSansDisplay-Bold.woff') format('woff');font-style:normal;font-weight:700;font-display:swap}
+@font-face{font-family:"Participation Prompt Sans";src:local('AppleSDGothicNeo-Bold'),local('Apple SD Gothic Neo Bold');font-style:normal;font-weight:700;font-display:swap}
 *{box-sizing:border-box}
 :root{--korean-ink:#2e2e2e;--english-ink:#4d4d4d;--english-muted:#808080;--text-size:max(10px,.78125vw);--small-text-size:calc(var(--text-size)*.9);--ko-text-size:calc(var(--text-size) - .6pt);--en-text-size:calc(var(--text-size) + .45pt);--ko-small-size:calc(var(--small-text-size) - .6pt);--en-small-size:calc(var(--small-text-size) + .45pt);--text-leading:calc(var(--text-size)*1.53);--small-leading:calc(var(--small-text-size)*1.53);color:var(--korean-ink);background:#fff;font-family:"Noto Serif KR",serif;font-weight:500;font-synthesis:none}
 body{margin:0;overflow-x:hidden}
@@ -113,9 +114,10 @@ dialog a{text-decoration:underline;text-underline-offset:4px}
 #participation{position:absolute;inset:0;padding:14px 16px 21px;text-align:center;display:flex;flex-direction:column;align-items:center}
 #expectation-question{flex:none;font:inherit;font-size:var(--ko-text-size);line-height:var(--text-leading);margin:0 0 6px}
 #product-link{text-decoration:underline;text-underline-offset:3px}
-#expectation-form{display:flex;gap:8px;position:relative;width:min(620px,100%);flex:1;min-height:var(--text-leading);margin:0 auto}
+#expectation-form{display:flex;position:relative;width:min(480px,100%);height:calc(var(--text-leading) + 8px);flex:none;margin:0 auto}
 .expectation-field{position:relative;flex:1;min-width:0;--input-inset:3px}
-#expectation{position:relative;z-index:1;display:block;width:100%;height:100%;min-height:calc(var(--text-leading) + 8px);resize:none;background:transparent;color:var(--korean-ink);border:1px solid #9a9a9a;border-radius:0;padding:var(--input-inset) 7px;font:inherit;font-size:var(--ko-text-size);line-height:var(--text-leading);overflow-wrap:anywhere}
+#expectation{position:relative;z-index:1;display:block;width:100%;height:100%;min-height:0;resize:none;background:transparent;color:var(--korean-ink);border:1px solid #b8b8b8;border-radius:0;padding:var(--input-inset) 7px;font:inherit;font-size:var(--ko-text-size);line-height:var(--text-leading);overflow-wrap:anywhere}
+#expectation::placeholder,.expectation-measure.is-placeholder{font-family:"Participation Prompt Sans","Apple SD Gothic Neo",sans-serif;font-weight:700;letter-spacing:-.02em}
 #expectation::placeholder{color:#868686}
 #expectation:focus,#expectation:focus-visible{outline:none;box-shadow:none}
 #visitor-status{position:absolute;bottom:1px;left:16px;right:16px;margin:0;font-size:var(--ko-small-size);line-height:18px;color:#666;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}

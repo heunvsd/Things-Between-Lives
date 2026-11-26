@@ -11,6 +11,7 @@
   if(alignmentQueued)return;alignmentQueued=true;
   requestAnimationFrame(()=>{
    alignmentQueued=false;if(!field.clientHeight)return;
+   measure.classList.toggle('is-placeholder',!input.value);
    measure.style.width=Math.max(0,field.clientWidth-2)+'px';measure.textContent=(input.value||input.placeholder)+'\u200b';
    // Read the containing field, not the textarea whose padding we are changing.
    const inset=Math.max(3,(field.clientHeight-2-measure.getBoundingClientRect().height)/2);
