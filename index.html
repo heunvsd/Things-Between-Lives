@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>모셔 두는 향수 / A perfume kept close</title>
+ <link rel="stylesheet" href="https://use.typekit.net/kku2qxq.css?v=20261126-joly">
+ <link rel="stylesheet" href="style-block-type.css?v=type39">
+</head>
+<body>
+
+ <main id="sheet" aria-label="사물과 사람 / Objects and people">
+  <div id="intro">
+   <article id="workshop" aria-label="워크숍 이야기 / Workshop story"></article>
+   <section id="participation" aria-labelledby="expectation-question" hidden>
+    <h1 id="expectation-question"><a id="product-link" lang="en" target="_blank" rel="noopener noreferrer"></a> 이 물건을 선택하며 어떤 생활을 기대하나요?</h1>
+    <form id="expectation-form">
+     <div class="expectation-field">
+      <label class="visually-hidden" for="expectation">이 물건을 선택하며 기대하는 생활</label>
+      <textarea id="expectation" name="expectation" rows="1" maxlength="600" placeholder="갖고 싶은 이유나 기대하는 일상을 자유롭게 적어 주세요." aria-describedby="visitor-status"></textarea>
+     </div>
+    </form>
+    <p id="visitor-status" role="status" aria-live="polite"></p>
+   </section>
+  </div>
+  <nav id="view-nav" aria-label="읽기 방식">
+   <button id="how-button" type="button" lang="en" aria-haspopup="dialog">How to</button>
+   <div class="view-switch"><button type="button" data-view-button="1" aria-pressed="true" aria-label="1 워크숍 글">1</button><button type="button" data-view-button="2" aria-pressed="false" aria-label="2 나의 기대와 비교">2</button></div>
+   <button id="info-button" type="button" lang="en" aria-haspopup="dialog">Info</button>
+  </nav>
+  <div id="composition" aria-label="관련 기록 / Related accounts"></div></main>
+ <nav id="people-nav" aria-label="참여자 선택 / Choose a participant"></nav>
+ <dialog id="detail" aria-labelledby="detail-title">
+  <button class="close" aria-label="닫기 / Close"><span class="ko">닫기</span> <span class="en" lang="en">Close ×</span></button>
+  <div id="detail-content"></div>
+ </dialog>
+ <dialog id="visitor-help" aria-labelledby="help-title"><button class="help-close" type="button" aria-label="닫기">Close ×</button><h2 id="help-title" lang="en"></h2><div class="help-copy"></div></dialog>
+ <script src="visitor.js?v=4"></script>
+ <script src="all-source-data.js?v=20261126-16"></script>
+ <script src="all-translations.js?v=20261126-16"></script>
+ <script src="account-languages.js?v=1"></script>
+ <script src="participants.js?v=20261126-16-names1"></script>
+ <script src="connections.js?v=20261126-16"></script>
+ <script src="participant-connections.js?v=20261126-16"></script>
+ <script src="app-ink.js?v=block-type38"></script>
+</body>
+</html>
