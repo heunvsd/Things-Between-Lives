@@ -1,7 +1,7 @@
 const participants=window.WORKSHOP_PARTICIPANTS;
 // Temporary display filter only. All 16 participants and their content stay intact.
 // Add an id here to show that participant again, or use participants.map(person=>person.id).
-const visibleParticipantIds=new Set([13,14]); // 김항욱, 이해인
+const visibleParticipantIds=new Set([13]); // 김항욱만 표시. 다른 참여자의 데이터는 그대로 보존합니다.
 const rows=Object.fromEntries(window.ACCOUNT_ROWS.map(r=>[r[0],r]));
 const T = window.TRANSLATIONS;
 const accountLanguage=id=>window.ACCOUNT_LANGUAGES[id];

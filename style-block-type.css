@@ -109,7 +109,7 @@ dialog a{text-decoration:underline;text-underline-offset:4px}
 /* Participation is an additional reading basis. Type and six-column geometry stay shared. */
 [hidden]{display:none!important}
 #intro{position:relative;min-height:calc(var(--text-leading)*2 + 49px)}
-#sheet[data-content="hidden"] #intro{display:none}
+#sheet[data-content="hidden"] #intro,#sheet[data-content="hidden"] #view-nav{display:none}
 #sheet[data-view="2"] #workshop{visibility:hidden;pointer-events:none}
 #participation{position:absolute;inset:0;padding:14px 16px 21px;text-align:center;display:flex;flex-direction:column;align-items:center}
 #expectation-question{flex:none;font:inherit;font-size:var(--ko-text-size);line-height:var(--text-leading);margin:0 0 6px}
