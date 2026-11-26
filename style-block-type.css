@@ -121,6 +121,12 @@ dialog a{text-decoration:underline;text-underline-offset:4px}
 #expectation::placeholder{color:#868686}
 #expectation:focus,#expectation:focus-visible{outline:none;box-shadow:none}
 #visitor-status{position:absolute;bottom:1px;left:16px;right:16px;margin:0;font-size:var(--ko-small-size);line-height:18px;color:#666;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}
+/* The loader sits at the viewport center without moving or blocking the reading surface. */
+#visitor-loading{position:fixed;inset:0;z-index:110;display:grid;place-items:center;pointer-events:none}
+.loading-dots{position:relative;display:block;width:44px;height:44px;border-radius:50%;background:rgb(255 255 255 / .92);animation:loading-orbit 1.1s linear infinite}
+.loading-dots i{position:absolute;left:20px;top:20px;width:4px;height:4px;border-radius:50%;background:#999;opacity:calc(.25 + var(--dot)*.1);transform:rotate(calc(var(--dot)*45deg)) translateY(-13px)}
+@keyframes loading-orbit{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.loading-dots{animation:none}}
 .expectation-preview{position:absolute;inset:1px;overflow:hidden;pointer-events:none;text-align:left}
 .expectation-preview>div{padding:var(--input-inset) 7px;font:inherit;font-size:var(--ko-text-size);line-height:var(--text-leading);white-space:pre-wrap;overflow-wrap:anywhere}
 .expectation-measure{position:absolute;top:0;left:0;visibility:hidden;pointer-events:none;padding:0 7px;font:inherit;font-size:var(--ko-text-size);line-height:var(--text-leading);white-space:pre-wrap;overflow-wrap:anywhere}

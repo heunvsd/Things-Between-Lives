@@ -5,7 +5,7 @@
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Things Between Lives</title>
  <link rel="stylesheet" href="https://use.typekit.net/kku2qxq.css?v=20261126-joly">
- <link rel="stylesheet" href="style-block-type.css?v=type40">
+ <link rel="stylesheet" href="style-block-type.css?v=type42">
 </head>
 <body>
 
@@ -30,12 +30,16 @@
   </nav>
   <div id="composition" aria-label="관련 기록 / Related accounts"></div></main>
  <nav id="people-nav" aria-label="참여자 선택 / Choose a participant"></nav>
+ <div id="visitor-loading" role="status" aria-live="polite" hidden>
+  <span class="loading-dots" aria-hidden="true"><i style="--dot:0"></i><i style="--dot:1"></i><i style="--dot:2"></i><i style="--dot:3"></i><i style="--dot:4"></i><i style="--dot:5"></i><i style="--dot:6"></i><i style="--dot:7"></i></span>
+  <span class="visually-hidden">문장의 의미를 비교하고 있습니다.</span>
+ </div>
  <dialog id="detail" aria-labelledby="detail-title">
   <button class="close" aria-label="닫기 / Close"><span class="ko">닫기</span> <span class="en" lang="en">Close ×</span></button>
   <div id="detail-content"></div>
  </dialog>
  <dialog id="visitor-help" aria-labelledby="help-title"><button class="help-close" type="button" aria-label="닫기">Close ×</button><h2 id="help-title" lang="en"></h2><div class="help-copy"></div></dialog>
- <script src="visitor.js?v=5"></script>
+ <script src="visitor.js?v=6"></script>
  <script src="all-source-data.js?v=20261126-16"></script>
  <script src="all-translations.js?v=20261126-16"></script>
  <script src="account-languages.js?v=1"></script>

@@ -2,6 +2,7 @@
 (()=>{
  const form=document.querySelector('#expectation-form'),input=document.querySelector('#expectation');
  const status=document.querySelector('#visitor-status'),field=document.querySelector('.expectation-field');
+ const loading=document.querySelector('#visitor-loading');
  const preview=document.createElement('div'),previewCopy=document.createElement('div');
  preview.className='expectation-preview';preview.setAttribute('aria-hidden','true');preview.append(previewCopy);field.prepend(preview);
  input.addEventListener('scroll',()=>{previewCopy.style.transform=`translateY(${-input.scrollTop}px)`});
@@ -37,6 +38,7 @@
   document.querySelector('#workshop').inert=view===2;
   document.querySelector('#workshop').setAttribute('aria-hidden',String(view===2));
   form.setAttribute('aria-busy',String(busy));
+  loading.hidden=!(busy&&view===2&&products[person]);
   status.textContent=current.message;alignInput();
   previewCopy.replaceChildren();const result=current.result;
   preview.hidden=!result;form.dataset.preview=String(Boolean(result));
@@ -53,6 +55,7 @@
   request++;clearTimeout(timeout);
   if(worker&&busy){worker.terminate();worker=null}
   busy=false;
+  loading.hidden=true;form.setAttribute('aria-busy','false');
  }
  function switchView(next){if(next===view)return;view=next;if(view===1)cancel();update();changed()}
  document.querySelectorAll('[data-view-button]').forEach(b=>b.addEventListener('click',()=>switchView(Number(b.dataset.viewButton))));
@@ -71,7 +74,7 @@
   if(view!==2||busy||composing||state().result?.text===text)return;
   if(text.length<4){state().message='상상한 일상이나 기대를 조금 더 적어 주세요.';update();input.focus();return}
   cancel();view=2;busy=true;const id=++request,current=state();current.draft=input.value;current.result=null;
-  current.message='문장의 의미를 읽고 있어요.';update();changed();
+  current.message='';update();changed();
   try{
    if(!worker)worker=new Worker(new URL('semantic-worker.mjs',document.baseURI),{type:'module'});
    worker.onmessage=({data})=>{
