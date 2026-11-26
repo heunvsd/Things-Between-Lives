@@ -183,7 +183,7 @@ function renderParticipant(id,refresh=false){
  sheet.dataset.effect=person.id===13?'inkblocks':'blocks';
  sheet.setAttribute('aria-label',person.object+' / '+person.titleEn);
  workshop.setAttribute('aria-label',person.name+'의 워크숍 이야기 / '+person.nameEn+'’s workshop story');
- document.title=person.name+' · '+person.title+' / '+person.titleEn;
+ document.title='Things Between Lives';
  const source=node('button',null,'workshop-source');source.type='button';
  source.title='워크숍 원문 보기';source.setAttribute('aria-haspopup','dialog');
  source.append(annotate(original.join(' '),connections.map(c=>({connection:c,phrases:c.source.ko})),'ko','workshop-copy'));
